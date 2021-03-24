@@ -11,6 +11,7 @@ async function getSystem (id) {
 //gets members from system id
 async function getMembers (id) {
     let url = `${api}/s/${id}/members`
+    console.log(url)
     result = await newRequest(url)
     return JSON.parse(result)
 }

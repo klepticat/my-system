@@ -9,6 +9,8 @@ async function search () {
         //get system
         getSystem(id).then(result => {
             sysInfo.hidden = false;
+            sysInfo.style.display = 'block';
+            console.log(result)
 
             //set system information
             if(result.name != null) addInfo('sysName', result.name)
