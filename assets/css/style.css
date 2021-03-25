@@ -65,3 +65,8 @@ button:hover {
 button:active {
     background-color: #615F5F;
 }
+
+#sysIcon {
+    width: 10vh;
+    height: 10vh;
+}

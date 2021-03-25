@@ -15,7 +15,7 @@ async function search () {
             //set system information
             if(result.name != null) addInfo('sysName', result.name)
             else clearInfo('sysName')
-            if(result.avatar_url != null) addInfo('sysIcon', result.avatar_url)
+            if(result.avatar_url != null) addImage('sysIcon', result.avatar_url)
             else clearInfo('sysIcon')
             if(result.description != null) addInfo('sysDesc', result.description)
             else clearInfo('sysDesc')
@@ -39,6 +39,14 @@ function addInfo (id, data) {
     if(element.hidden == true) element.hidden = false;
     if(element.parentElement.hidden == true) element.parentElement.hidden = false;
     element.innerHTML = data
+}
+
+//adds an image (instead of info)
+function addImage (id, url) {
+    console.log(url)
+    let element = document.getElementById(id)
+    if(element.hidden == true) element.hidden = false;
+    element.src = url
 }
 
 //clear info and hide element
