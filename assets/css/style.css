@@ -70,3 +70,11 @@ button:active {
     width: 10vh;
     height: 10vh;
 }
+.memberImg {
+    width: 10vh;
+    height: 10vh;
+}
+
+ul {
+    list-style: none;
+}

@@ -24,6 +24,28 @@ async function search () {
 
             //get members
             getMembers(result.id).then(result => {
+                document.getElementById('members').innerHTML = ''
+                console.log(result)
+                for(i in result) {
+                    let member = document.createElement('li')
+                    
+                    member.innerHTML += `<h3>${result[i].name}</h3>`;
+                    
+                    if(result[i].avatar_url) {member.innerHTML += `<br><img class='memberImg' src='${result[i].avatar_url}'>`}
+                    else {member.innerHTML += `<br><img class='memberImg' src='./assets/images/noimg.png'>`};
+                    
+                    let desc = ''
+                    let desc2 = ''
+                    if(result[i].description) {
+                        desc = result[i].description;
+                        desc2 = desc.replace(/(?:\r\n|\r|\n)/g, "<br>");
+                    } else {
+                        desc2 = 'No description!'
+                    }
+                    member.innerHTML += `<br><p>Description:</p><p>${desc2}</p><br>`;
+                    
+                    document.getElementById('members').appendChild(member)
+                }
 
             })
         })
